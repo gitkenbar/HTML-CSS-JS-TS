@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* greater than 762px */
+    body{
+        margin: 0px;
+    }
+    .main{
+        width: 50%;
+    }
+    .sidebar{
+        width: 25%;
+    }
+    .column{
+        float: left;
+    }
+    .container{
+        text-align:center;
+    }
+    .container-cards{
+        display:flex;
+        padding: 20px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .container-cards img{
+        width: 100%;
+    }
+    .card{
+        max-width: 31%;
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        box-shadow: 0 4px 0px rgba(0,0,0,0.1);
+        padding: 20px;
+        transition: background 1s;
+        animation: slideFromLeft 1.1s forwards;
+        transform: translateX(-100%);
+            opacity:0;
+    }
+    .card:hover{
+        background: grey;
+        cursor:pointer;
+        transition: background 1s;
+    }
+    @keyframes slideFromLeft{
+        0%{
+            transform: translateX(-100%);
+            opacity:0;
+        }
+        100%{
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+    .card:nth-child(1){
+        animation-delay: .3s;
+    }
+    .card:nth-child(2){
+        animation-delay: .6s;
+    }
+    .card:nth-child(3){
+        animation-delay: .9s;
+    }
+    .card-image{
+        position: relative;
+    }
+    .cardTitle{
+        position:absolute;
+        top: 0px;
+        left:10px;
+        color: white;
+        z-index: 10;
+    }
+    .overlay{
+        background: black;
+        opacity: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* width: 100px; */
+        right: 0;
+        /* height: 100%; */
+        bottom: 0;
+    }
+    @media screen and (max-width:1200px){
+        .card {
+            max-width: calc(50% - 20px);
+        }
+    }
+    /* less than 762px */
+    @media screen and (max-width: 768px){
+        .column, 
+        .sidebar, 
+        .main-content{
+            float:none;
+            width: 100%;
+        }
+        .sidebar{
+            display:none;
+        }
+    }
+    @media screen and (max-width: 400px){
+        .card{
+            max-width: 100%;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="column sidebar">
+            <h2>Sidebar 1</h2>
+            <p>this is the content for the first sidebar</p>
+        </div>
+        <div class="column main-content">
+            <h2>Main</h2>
+            <p>this is the content for the main area</p>
+            <div class="container-cards">
+                <div class="card">
+                    <div class="card-image">
+                             <img src="https://c02.purpledshub.com/uploads/sites/48/2023/02/why-sky-blue-2db86ae.jpg" alt="">
+                            <h2 class="cardTitle">Card 1</h2>
+                            <div class="overlay"></div>
+                    </div>
+                    <p>This is the content for the first card.</p>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://www.adorama.com/alc/wp-content/uploads/2017/11/shutterstock_114802408.jpg" alt="">
+                        <h2 class="cardTitle">Card 2</h2>
+                        <div class="overlay"></div>
+                    </div>
+                    <p>This is the content for the first card.</p>
+                    
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://cdn.hswstatic.com/gif/why-is-sky-blue.jpg" alt="">
+                        <h2 class="cardTitle">Card 3</h2>
+                        <div class="overlay"></div>
+                    </div>    
+                    <p>This is the content for the first card.</p>
+                </div>
+        </div>
+        
+        
+    </div>
+    <div class="column sidebar">
+        <h2>Sidebar 2</h2>
+        <p>this is the content for the second sidebar</p>
+    </div>
+    </div>
+</body>
+</html>

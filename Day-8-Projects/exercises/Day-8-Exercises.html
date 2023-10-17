@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv">This is a div</div>
+    <p>First paragraph.</p>
+    <p>Second paragraph.</p>
+<script>
+// Exercise 1 - Working the Dom    
+    // grab elements
+    const divGrab = document.querySelector("#myDiv");
+    const paragraph = document.querySelectorAll(`p`);
+    
+    // do stuff to them
+    function divColor() {
+        divGrab.style.backgroundColor = 'lightblue'
+    };
+    divColor();
+    paragraph.forEach(
+        function(paragraph){
+        console.log(paragraph.innerText);
+        } );
+    console.log(paragraph)
+</script>
+</body>
+</html>
